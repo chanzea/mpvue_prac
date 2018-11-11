@@ -97,6 +97,7 @@ export default {
 
 .counter {
   display: inline-block;
+  background: #f00;
   margin: 10px auto;
   padding: 5px 10px;
   color: blue;
