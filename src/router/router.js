@@ -1,22 +1,22 @@
 module.exports = [
   {
-    path: 'pages/entry',
+    path: 'pages/entry/index',
     name: 'Index',
     config: {
-      navigationBarTitleText: '文章详情',
+      navigationBarTitleText: '首页',
       // 引入UI组件，后面会讲到
       usingComponents: {
-        'i-tab-bar': '/dist/tab-bar/index',
-        'i-tab-bar-item': '/dist/tab-bar-item/index'
+        'i-tab-bar': '/iview/tab-bar/index',
+        'i-tab-bar-item': '/iview/tab-bar-item/index'
       }
     }
   }, {
-    path: 'pages/home',
+    path: 'pages/home/index',
     name: 'Index',
     config: {
       navigationBarTitleText: 'list详情',
       usingComponents: {
-        'i-button': '/dist/button/index'
+        'i-button': '/iview/button/index'
       }
     }
   }

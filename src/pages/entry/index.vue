@@ -3,27 +3,53 @@
     <div class="content">
     </div>
     <div class="footer">
-      <i-tab-bar :current="current" bindchange="handleChange">
-        <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="Home"></i-tab-bar-item>
-        <i-tab-bar-item key="group" icon="group" current-icon="group_fill" title="Friends"></i-tab-bar-item>
-        <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" count="3" title="Notice"></i-tab-bar-item>
-        <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" dot title="My"></i-tab-bar-item>
+      <i-tab-bar :current="current" @click="handleChange">
+        <i-tab-bar-item v-for="(item, index) in taBbar" :key="item.key" :icon="item.icon" :current-icon="item.current_icon" :dot="item.isDot" :title="item.title" @click="handleChanges"></i-tab-bar-item>
       </i-tab-bar>
     </div> 
   </div>
 </template>
 <script>
 export default {
+  name: 'Entry',
   data () {
     return {
-      current: 'homepage'
+      current: 'homepage',
+      taBbar: [{
+        key: 'homepage',
+        icon: 'homepage',
+        current_icon: 'homepage_fill',
+        title: 'Home',
+        isDot: false
+      }, {
+        key: 'group',
+        icon: 'group',
+        current_icon: 'group_fill',
+        title: 'friend',
+        isDot: false
+      }, {
+        key: 'remind',
+        icon: 'remind',
+        current_icon: 'remind_fill',
+        title: 'Notice',
+        isDot: false
+      }, {
+        key: 'mine',
+        icon: 'mine',
+        current_icon: 'mine_fill',
+        title: 'My',
+        isDot: true
+      }]
     }
   },
   methods: {
-    handleChange ({ detail }) {
-      this.setData({
-        current: detail.key
-      })
+    handleChange (value) {
+      console.log('value', value)
+      // this.$set(this, 'current', detail.key)
+    },
+    handleChanges (value) {
+      console.log('values', value)
+      // this.$set(this, 'current', detail.key)
     }
   }
 }
