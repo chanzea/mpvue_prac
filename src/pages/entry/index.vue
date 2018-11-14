@@ -3,8 +3,8 @@
     <div class="content">
     </div>
     <div class="footer">
-      <i-tab-bar :current="current" @click="handleChange">
-        <i-tab-bar-item v-for="(item, index) in taBbar" :key="item.key" :icon="item.icon" :current-icon="item.current_icon" :dot="item.isDot" :title="item.title" @click="handleChanges"></i-tab-bar-item>
+      <i-tab-bar :current="current" @change="handleChange">
+        <i-tab-bar-item v-for="(item, index) in taBbar" :key="item.key" :icon="item.icon" :current-icon="item.current_icon" :dot="item.isDot" :title="item.title"></i-tab-bar-item>
       </i-tab-bar>
     </div> 
   </div>
@@ -22,16 +22,16 @@ export default {
         title: 'Home',
         isDot: false
       }, {
-        key: 'group',
-        icon: 'group',
-        current_icon: 'group_fill',
-        title: 'friend',
+        key: 'activity',
+        icon: 'activity',
+        current_icon: 'activity_fill',
+        title: '最新',
         isDot: false
       }, {
-        key: 'remind',
-        icon: 'remind',
-        current_icon: 'remind_fill',
-        title: 'Notice',
+        key: 'live',
+        icon: 'live',
+        current_icon: 'live_fill',
+        title: '视频',
         isDot: false
       }, {
         key: 'mine',
@@ -43,13 +43,8 @@ export default {
     }
   },
   methods: {
-    handleChange (value) {
-      console.log('value', value)
-      // this.$set(this, 'current', detail.key)
-    },
-    handleChanges (value) {
-      console.log('values', value)
-      // this.$set(this, 'current', detail.key)
+    handleChange ({ target }) {
+      this.$set(this, 'current', target.key)
     }
   }
 }
