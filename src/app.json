@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/index/main",
+    "pages/entry/index",
+    "pages/news/index",
     "pages/logs/main",
     "pages/counter/main"
   ],
@@ -9,5 +10,40 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7AB4E4",
+    "selectedColor": "#fff",
+    "backgroundColor": "#286dba",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/entry/index",
+        "text": "比赛",
+        "iconPath": "./static/images/tabBar/game_active.png",
+        "selectedIconPath": "./static/images/tabBar/game__active.png"
+
+      }, {
+        "pagePath": "pages/news/index",
+        "text": "资讯",
+        "iconPath": "./static/images/tabBar/news_active.png",
+        "selectedIconPath": "./static/images/tabBar/news__active.png"
+      }, {
+        "pagePath": "pages/news/index",
+        "text": "视频",
+        "iconPath": "./static/images/tabBar/play_active.png",
+        "selectedIconPath": "./static/images/tabBar/play__active.png"
+      }, {
+        "pagePath": "pages/news/index",
+        "text": "数据",
+        "iconPath": "./static/images/tabBar/data_active.png",
+        "selectedIconPath": "./static/images/tabBar/data__active.png"
+      }, {
+        "pagePath": "pages/news/index",
+        "text": "我的",
+        "iconPath": "./static/images/tabBar/myself_active.png",
+        "selectedIconPath": "./static/images/tabBar/myself__active.png"
+      }
+    ]
   }
 }

@@ -1,50 +1,33 @@
 <template>
   <div class="entry">
     <div class="content">
+      <i-tabs :current="currentTab" @change="changeTab">
+        <i-tab key="game" title="赛程"></i-tab>
+        <i-tab key="focus" title="我的关注"></i-tab>
+      </i-tabs>
     </div>
     <div class="footer">
-      <i-tab-bar :current="current" @change="handleChange">
-        <i-tab-bar-item v-for="(item, index) in taBbar" :key="item.key" :icon="item.icon" :current-icon="item.current_icon" :dot="item.isDot" :title="item.title"></i-tab-bar-item>
-      </i-tab-bar>
     </div> 
   </div>
 </template>
 <script>
+import { tabBar } from '@/utils/data'
 export default {
   name: 'Entry',
   data () {
     return {
+      currentTab: 'game',
       current: 'homepage',
-      taBbar: [{
-        key: 'homepage',
-        icon: 'homepage',
-        current_icon: 'homepage_fill',
-        title: 'Home',
-        isDot: false
-      }, {
-        key: 'activity',
-        icon: 'activity',
-        current_icon: 'activity_fill',
-        title: '最新',
-        isDot: false
-      }, {
-        key: 'live',
-        icon: 'live',
-        current_icon: 'live_fill',
-        title: '视频',
-        isDot: false
-      }, {
-        key: 'mine',
-        icon: 'mine',
-        current_icon: 'mine_fill',
-        title: 'My',
-        isDot: true
-      }]
+      tabBar: tabBar
     }
   },
+  created () {
+
+  },
   methods: {
-    handleChange ({ target }) {
-      this.$set(this, 'current', target.key)
+    changeTab ({ target }) {
+      console.log('target', target)
+      this.$set(this, 'currentTab', target.key)
     }
   }
 }
