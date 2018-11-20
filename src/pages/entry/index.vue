@@ -1,7 +1,7 @@
 <template>
   <div class="entry">
     <div class="content">
-      <i-tabs :current="currentTab" @change="changeTab">
+      <i-tabs class="content-tab" color="#fff" :current="currentTab" @change="changeTab">
         <i-tab key="game" title="赛程"></i-tab>
         <i-tab key="focus" title="我的关注"></i-tab>
       </i-tabs>
@@ -41,9 +41,9 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   .content {
-    color: red;
     flex: 1;
-    font-size: 10px;
+    .content-tab{
+    }
   }
 }
 </style>
