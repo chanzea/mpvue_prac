@@ -6,12 +6,21 @@
       </i-tabs>
     </div>
     <div class="middle">
-
+      <component-card></component-card>
+      <component-card></component-card>
+      <component-card></component-card>
+      <component-card></component-card>
+      <component-card></component-card>
+      <component-card></component-card>
+      <component-card></component-card>
+      <component-card></component-card>
     </div>
   </div>
 </template>
 
 <script>
+import componentCard from './../../components/card.vue'
+
 export default {
   name: 'PageNews',
   data () {
@@ -40,6 +49,9 @@ export default {
       ]
     }
   },
+  components: {
+    componentCard
+  },
   methods: {
     changeTab ({ target }) {
       console.log('target', target)
@@ -59,6 +71,7 @@ export default {
   }
   .middle {
     flex: 1;
+    overflow: auto;
   }
 }
 </style>
