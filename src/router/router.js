@@ -3,10 +3,10 @@ module.exports = [
     path: 'pages/entry/index',
     name: 'Index',
     config: {
-      navigationBarTitleText: '比赛',
+      navigationBarTitleText: '发现',
       navigationBarTextStyle: 'white',
-      navigationBarBackgroundColor: '#0C3052',
-      // 引入UI组件，后面会讲到
+      navigationBarBackgroundColor: '#c4483c',
+      // 引入UI组件
       usingComponents: {
         'i-tabs': '/iview/tabs/index',
         'i-tab': '/iview/tab/index'
@@ -16,9 +16,9 @@ module.exports = [
     path: 'pages/news/index',
     name: 'Index',
     config: {
-      navigationBarTitleText: '最新',
+      navigationBarTitleText: '视频',
       navigationBarTextStyle: 'white',
-      navigationBarBackgroundColor: '#0C3052',
+      navigationBarBackgroundColor: '#c4483c',
       usingComponents: {
         'i-button': '/iview/button/index',
         'i-tabs': '/iview/tabs/index',
@@ -31,7 +31,7 @@ module.exports = [
     config: {
       navigationBarTitleText: '最新',
       navigationBarTextStyle: 'white',
-      navigationBarBackgroundColor: '#0C3052',
+      navigationBarBackgroundColor: '#c4483c',
       usingComponents: {
         'i-button': '/iview/button/index'
       }

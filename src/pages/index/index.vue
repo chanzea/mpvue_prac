@@ -10,7 +10,7 @@
 
     <div class="usermotto">
       <div class="user-motto">
-        <card :text="motto"></card>
+        <!-- <card :text="motto"></card> -->
       </div>
     </div>
 
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import card from '@/components/card'
+// import card from '@/components/card'
 
 export default {
   data () {
@@ -34,7 +34,7 @@ export default {
   },
 
   components: {
-    card
+    // card
   },
 
   methods: {

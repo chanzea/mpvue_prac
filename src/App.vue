@@ -16,6 +16,8 @@ page {
   width: 100%;
   height: 100%;
   display: flex;
+  font-size: 12px;
+  color: #333;
 }
 /* this rule will be remove */
 * {

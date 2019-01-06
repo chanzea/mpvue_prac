@@ -1,25 +1,17 @@
 <template>
   <div class="page-news">
     <div class="head">
-      <i-tabs class="content-tab" color="#fff" scroll :current="currentTab" @change="changeTab">
+      <!-- <i-tabs class="content-tab" color="#fff" scroll :current="currentTab" @change="changeTab">
         <i-tab v-for="(item, index) in tabs" :key="item.key" :title="item.title"></i-tab>
-      </i-tabs>
+      </i-tabs> -->
     </div>
     <div class="middle">
-      <component-card></component-card>
-      <component-card></component-card>
-      <component-card></component-card>
-      <component-card></component-card>
-      <component-card></component-card>
-      <component-card></component-card>
-      <component-card></component-card>
-      <component-card></component-card>
     </div>
   </div>
 </template>
 
 <script>
-import componentCard from './../../components/card.vue'
+// import componentCard from './../../components/card.vue'
 
 export default {
   name: 'PageNews',
@@ -50,7 +42,7 @@ export default {
     }
   },
   components: {
-    componentCard
+    // componentCard
   },
   methods: {
     changeTab ({ target }) {
