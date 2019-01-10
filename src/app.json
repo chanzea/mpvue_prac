@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/entry/recommend/songsListDetail/index",
     "pages/entry/index",
     "pages/news/index",
     "pages/logs/main",
-    "pages/counter/main"
+    "pages/counter/main",
+    "pages/personalized/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

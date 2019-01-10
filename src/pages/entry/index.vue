@@ -1,52 +1,36 @@
 <template>
   <div class="entry">
     <div class="content">
-      <i-tabs class="content-tab" color="#fff" :current="currentTab" @change="changeTab">
+      <i-tabs class="content-tab" fixed color="#fff" :current="currentTab" @change="changeTab">
         <i-tab key="recommend" title="个性推荐"></i-tab>
         <i-tab key="radioStation" title="主播电台"></i-tab>
       </i-tabs>
-      <!-- 歌单推荐 -->
-      <div class="personalized">
-        <div class="dis">推荐歌单 ></div>
-        <div class="songs-list">
-          <div class="songs-list-item" v-for="(item, index) in songsList" :key="index">
-            <songs-list :detail="item"></songs-list>
-          </div>
-        </div>
+      <div class="content-wrap">
+        <page-recommend v-if="currentTab === 'recommend'"></page-recommend>
+        <page-radio v-if="currentTab === 'radioStation'"></page-radio>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { personalized } from '@/api/index'
 
-import songsList from '@/components/songsList.vue'
+import pageRecommend from './recommend/index'
+import pageRadio from './radio/index'
 export default {
   name: 'Entry',
   data () {
     return {
-      currentTab: 'recommend',
-      current: 'homepage',
-      songsList: []
+      currentTab: 'recommend'
     }
   },
   components: {
-    songsList
-  },
-  created () {
-    this.personalized()
+    pageRecommend,
+    pageRadio
   },
   methods: {
     changeTab ({ target }) {
       console.log('target', target)
       this.$set(this, 'currentTab', target.key)
-    },
-
-    personalized () {
-      personalized().then(res => {
-        console.log('res', res)
-        this.$set(this, 'songsList', res.slice(0, 6))
-      })
     }
   }
 }
@@ -63,27 +47,12 @@ export default {
   .content {
     flex: 1;
     .content-tab{
+      position: fixed;
+      height: 42px;
     }
-    .personalized {
-      margin-top: 10px;
+    .content-wrap {
+      margin-top: 60px;
       padding: 0 10px;
-      .dis {
-        font-weight: bold;
-        font-size: 14px;
-      }
-      .songs-list {
-        display: flex;
-        flex-wrap: wrap;
-        .songs-list-item {
-          margin-top: 10px;
-          width: 30%;
-          flex-grow: 1;
-          &:nth-child(3n+2) {
-            margin-left: 8px;
-            margin-right: 8px;
-          }
-        }
-      }
     }
   }
 }

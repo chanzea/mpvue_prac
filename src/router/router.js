@@ -36,5 +36,24 @@ module.exports = [
         'i-button': '/iview/button/index'
       }
     }
+  }, {
+    path: 'pages/personalized/index',
+    name: 'Index',
+    config: {
+      navigationBarTitleText: '歌单',
+      navigationBarTextStyle: 'white',
+      navigationBarBackgroundColor: '#c4483c'
+    }
+  }, {
+    path: 'pages/entry/recommend/songsListDetail/index',
+    name: 'Index',
+    config: {
+      navigationBarTitleText: '歌单',
+      navigationBarTextStyle: 'white',
+      navigationBarBackgroundColor: '#362627',
+      usingComponents: {
+        'i-toast': '/iview/toast/index'
+      }
+    }
   }
 ]

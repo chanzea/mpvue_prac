@@ -1,8 +1,8 @@
 <template>
   <div class="component-songs-list">
-    <div class="container">
+    <div class="container" @click="getDetail">
       <div class="thumbnail">
-        <img :src="detail.picUrl" alt="">
+        <img :src="detail.picUrl" alt="" mode="widthFix">
       </div>
       <div class="dis">
         {{detail.name}}
@@ -20,8 +20,11 @@ export default {
       default: () => {}
     }
   },
-  created () {
-    // console.log('this.detail', this.detail)
+  methods: {
+    getDetail () {
+      console.log('detail', this.detail.id)
+      this.$emit('on-getDetail', this.detail.id)
+    }
   }
 }
 </script>
@@ -36,8 +39,6 @@ export default {
     display: flex;
     flex-direction: column;
     .thumbnail {
-      // width: 30%;
-      height: 80px;
       img {
         width: 100%;
         height: 100%;
