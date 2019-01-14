@@ -16,9 +16,9 @@
 export function formatNumber(value) {
   let _value = parseInt(value);
   if (10000 <= _value && _value < 100000000 ) {
-    _value = (_value / 10000).toFixed(2) + '万';
+    _value = (_value / 10000).toFixed(1) + '万';
   } else if (_value >= 100000000) {
-    _value = (_value / 100000000).toFixed(2) + '亿';
+    _value = (_value / 100000000).toFixed(1) + '亿';
   }
   return _value;
 }

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/entry/recommend/songsListDetail/index",
     "pages/entry/index",
+    "pages/play/index",
+    "pages/entry/recommend/songsListDetail/index",
     "pages/news/index",
     "pages/logs/main",
     "pages/counter/main",

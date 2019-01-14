@@ -55,5 +55,16 @@ module.exports = [
         'i-toast': '/iview/toast/index'
       }
     }
+  }, {
+    path: 'pages/play/index',
+    name: 'Index',
+    config: {
+      navigationBarTitleText: '歌',
+      navigationBarTextStyle: 'white',
+      navigationBarBackgroundColor: '#362627',
+      usingComponents: {
+        'i-toast': '/iview/toast/index'
+      }
+    }
   }
 ]
